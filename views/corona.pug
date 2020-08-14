@@ -1,0 +1,71 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title CATALYST 005
+  link(rel='stylesheet' href='../css/bootstrap.css')
+  link(rel='stylesheet' href='../css/corona.css')
+form.covid(style='border:1px solid black; margin-top:15px;' action='/user' method='post' name='coronavirus'  onsubmit='formValidation(event);')
+  .container
+    .row
+      .col-lg-12
+        img(src='../images/form-header-image.png' alt='' width='100%' height='100%')
+    
+  div
+    h6(style='text-align: center;')
+      | Ministry of Health
+  div
+    h3(style='text-align: center; font-weight:bold;')
+      | COVID19(CORONA VIRUS)
+  div
+    h6(style='text-align: center;')
+      | Virus-Test Registration Form
+  .form-row(style='margin-left:20px; margin-right:20px;')
+    .form-group.col-md-6
+      label(for='name') Surname
+      input#surnames.form-control(type='text' name='surname'  )
+      #error1(style='display: none; color:red;') This field is required
+    .form-group.col-md-6
+      label(for='name') Given name
+      input#given-names.form-control(type='text' name='given_name'  )
+      #error2(style='display: none; color:red;') This field is required
+  .form-row(style='margin-left:20px; margin-right:20px;')
+    .form-group.col-md-6
+      label(for='name') Date of birth
+      input#date.form-control(type='text' name='dob' placeholder='YY/MM/DD' )
+      #error3(style='display: none; color:red;') Select Date of Birth
+    .form-group.col-md-6
+      label(for='name') Place of residence
+      input.form-control(type='text' id='residence' name='placeofresidence' )
+      #error4(style='display: none; color:red;') This field is required
+  .form-row(style='margin-left:20px; margin-right:20px;')
+    .form-group.col-md-6
+      label(for='name') Occupation
+      input.form-control(type='text' id='occupation' name='occupation' )
+      #error5(style='display: none; color:red;') This field is required
+    .form-group.col-md-6
+      label(for='name') Nationality
+      input.form-control(type='text' id='' name='nationality' )
+      #error6(style='display: none; color:red;') This field is required
+  .form-row(style='margin-left:20px; margin-right:20px;')
+    .form-group.col-md-6
+      label(for='name') Gender
+      input(type='radio' name='gender' value='male' )
+      | Male
+      input(type='radio' style='margin-left: 150px;' name='gender' value='female')
+      | Female
+  .form-row(style='margin-left:20px; margin-right:20px;')
+    .form-group.col-md-12
+      label(for='name') Categories
+      select.form-control(name='category' id='' placeholder='--Select Category--')
+        #error7(style='display: none; color:red;') Select Patient category
+        option(value='default') --Select Category--
+        option(value='returnee') Returnee
+        option(value='contact') Contact
+        option(value='volunteer') Volunteer
+        option(value='alert') Alert
+        
+        
+
+  input.btn.btn-primary(type='submit' value='Register' style='margin-left: 600px; padding:3px 60px;')
+  script(src='../js/corona.js')
